@@ -126,7 +126,15 @@ const Footer = () => {
 
         <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-white/50 text-xs sm:text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} Bonacia Holdings. All rights reserved.
+            © {new Date().getFullYear()} Bonacia Holdings. All rights reserved. Built by{" "}
+            <a
+              href="https://www.lunexweb.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:text-accent/80 transition-colors font-semibold"
+            >
+              lunexweb
+            </a>
           </p>
           <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm text-white/50">
             <a href="#" className="hover:text-accent transition-colors">

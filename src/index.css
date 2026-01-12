@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Bonacia Holdings Design System - Premium Logistics Aesthetic */
+
+@layer base {
+  :root {
+    /* Core brand colors - Deep navy trust, coral energy */
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+    
+    /* Navy primary - trust, professionalism */
+    --primary: 220 60% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Soft gray secondary */
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 25% 15%;
+    
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Coral accent - energy, action */
+    --accent: 12 85% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 60% 20%;
+    
+    --radius: 0.625rem;
+    
+    /* Extended palette */
+    --navy-900: 220 60% 12%;
+    --navy-800: 220 60% 20%;
+    --navy-700: 220 55% 28%;
+    --navy-600: 220 50% 38%;
+    
+    --coral-500: 12 85% 60%;
+    --coral-600: 12 90% 52%;
+    --coral-400: 12 85% 68%;
+    
+    --slate-50: 210 20% 98%;
+    --slate-100: 210 18% 95%;
+    --slate-200: 215 16% 90%;
+    --slate-800: 220 20% 18%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 12%) 0%, hsl(220 50% 25%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(12 85% 60%) 0%, hsl(20 90% 55%) 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(17, 24, 39, 0.85) 0%, rgba(17, 24, 39, 0.6) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(17, 24, 39, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(17, 24, 39, 0.1), 0 2px 4px -2px rgba(17, 24, 39, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(17, 24, 39, 0.1), 0 4px 6px -4px rgba(17, 24, 39, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(17, 24, 39, 0.1), 0 8px 10px -6px rgba(17, 24, 39, 0.1);
+    --shadow-glow: 0 0 40px rgba(234, 88, 64, 0.25);
+    
+    /* Sidebar */
+    --sidebar-background: 220 60% 12%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 12 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 50% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 50% 25%;
+    --sidebar-ring: 12 85% 60%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 210 20% 95%;
+    
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 95%;
+    
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 20% 95%;
+    
+    --primary: 12 85% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 20% 90%;
+    
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 15% 55%;
+    
+    --accent: 12 85% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 20% 22%;
+    --input: 220 20% 22%;
+    --ring: 12 85% 60%;
+    
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 12 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 12 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
